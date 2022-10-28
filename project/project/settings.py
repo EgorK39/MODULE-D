@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -150,10 +151,13 @@ ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 LOGIN_REDIRECT_URL = '/news'
 SITE_URL = 'http://127.0.0.1:8000'  # !
 
+load_dotenv()
+E_PASSWORD = os.getenv("E_PASSWORD")
+
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'egor159kulikov@yandex.ru'
-EMAIL_HOST_PASSWORD = '***'
+EMAIL_HOST_PASSWORD = E_PASSWORD
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 

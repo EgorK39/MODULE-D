@@ -55,3 +55,9 @@
 # print(';')
 # dt_now = datetime.datetime.utcnow()
 # print(dt_now)
+
+# def connect(password):
+#     if password == 'qwerty':
+#         return "ХОРОШО"
+#     else:
+#         return "ПЛОХО"
