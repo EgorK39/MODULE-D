@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filter %}
+{% block title %}
+Статья
+{% endblock title %}
+
+{% block content %}
+{{ article.titel_name|censor }}
+<hr>
+Дата публикации: {{article.time_in|date:'d m y' }}
+<br>
+{{ article.text | censor }}
+{% endblock content %}
